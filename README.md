@@ -10,7 +10,7 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
 3. Entregar por cada tema (con `SendUserMessage`, son para leer):
    - **Guion para ElevenLabs**: 220–260 palabras (≈ 85–100 s), números escritos con letras, frases cortas, gancho fuerte en la primera frase, cierre con una pregunta al espectador.
    - Pregunta en pantalla · 3 títulos · texto de portada (máx. 4 palabras) · descripción SEO de YouTube con hashtags · **debajo** la descripción para Instagram · fuentes (enlaces).
-4. Rubén genera los audios con su voz clonada y los envía (mp3). Montar cada Short (sección «Montaje») y enviar con `SendUserFile` el MP4 + la portada PNG, más la hora prevista de publicación.
+4. **Voz**: conector ElevenLabs → `creative_generate_speech` con `voice_id: alVwHikmUqVhndrBggwB` (voz clonada «Yo» de Rubén), `model_id: eleven_v4`, `generations_count: 1` (plan Creator, ~1 crédito por carácter; nunca repetir una generación para reintentar). Tras ~20 s, `creative_get_generations` da el `full_res_url`; descargarlo con curl. Si el dominio elevenlabsusercontent.com está bloqueado, pedir a Rubén que descargue el mp3 desde el flow y lo envíe. Montar cada Short (sección «Montaje») y enviar con `SendUserFile` el MP4 + la portada PNG, más la hora prevista de publicación.
 5. Cuando Rubén responda «ok» (aprobación explícita), subir y programar (sección «Publicación»). Sin «ok», no publicar nunca.
 
 **Horas de publicación** (Europa/Madrid): entre semana **14:30** y **20:30**; sábados y domingos **11:00** y **19:00**. Si un día ya pasó la primera hora, usar la siguiente franja libre.
