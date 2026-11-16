@@ -51,6 +51,8 @@ Montaje final: concat de `parts/q_*.mp4` + mix.wav, `libx264 -crf 20 -preset ver
    `https://raw.githubusercontent.com/Campos0430/claude/videos/<archivo>.mp4` → `vidiq_video_upload` (url) → uploadId.
    La portada con `vidiq_upload_image` si hace falta (la miniatura personalizada solo funciona en canales verificados).
 2. `vidiq_social_post_draft_create` con dos destinos: YOUTUBE (UCJtNzOk9QpT6nn2UV1Vgjgw, título elegido, descripción SEO como `text`, `privacyStatus: public`, `publishAt` a la hora acordada, categoría 27 Educación) e INSTAGRAM (29701781146124881, descripción de Instagram como `text`, mismo `publishAt`).
-3. Enseñar el borrador a Rubén si cambia algo; con su «ok», `vidiq_social_post_publish`. Después borrar el MP4 de la rama `videos`.
+3. Enseñar el borrador a Rubén si cambia algo; con su «ok», `vidiq_social_post_publish`. Después vaciar la rama `videos` (borrar la rama falla por el proxy): repo nuevo en /tmp con solo un README, `git checkout -b videos`, commit y `git push -f origin videos`.
+
+Subir el MP4: repo nuevo en /tmp, `git checkout -b videos`, copiar el MP4, commit y `git push -f origin videos` (probado el 16-11-2026: raw.githubusercontent.com lo sirve como application/octet-stream y vidiq_video_upload lo importa).
 
 Si GitHub rechaza el push, pedir a Rubén que suba el MP4 con `vidiq_file_upload` (selector de archivos) y seguir igual.
