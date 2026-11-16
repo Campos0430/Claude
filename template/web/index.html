@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:MontBlack;src:url('../../short/node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2')}
+@font-face{font-family:MontXB;src:url('../../short/node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2')}
+@font-face{font-family:InterSB;src:url('../../short/node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2')}
+html,body{margin:0;background:#000;overflow:hidden}
+canvas{position:absolute;left:0;top:0;width:1080px;height:1920px}
+</style></head>
+<body><canvas id="gl" width="1080" height="1920"></canvas><canvas id="ov" width="1080" height="1920"></canvas>
+<script src="three.min.js"></script>
+<script>
+const W = 1080, H = 1920, DUR = 105.5;
+const C = { night: '#0B1426', cyan: '#3FD0E8', amber: '#F5A623', white: '#F4F1EA' };
+const DEG = Math.PI / 180, TAU = Math.PI * 2;
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const eOut = x => 1 - Math.pow(1 - x, 3);
+const eOut5 = x => 1 - Math.pow(1 - x, 5);
+const eIO = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const back = x => { const c1 = 1.7, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+function rgba(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const PP = new Uint8Array(512); { const p = [...Array(256).keys()]; for (let i = 255; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [p[i], p[j]] = [p[j], p[i]]; } for (let i = 0; i < 512; i++) PP[i] = p[i & 255]; }
+const GG = new Float32Array(256); for (let i = 0; i < 256; i++) GG[i] = rnd();
+function vnoise(x, y, wrap) {
+  const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+  const X0 = ((xi % wrap) + wrap) % wrap, X1 = (X0 + 1) % wrap;
+  const h = (a, b) => GG[PP[(PP[a & 255] + (b & 255)) & 511]];
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+  return lerp(lerp(h(X0, yi), h(X1, yi), u), lerp(h(X0, yi + 1), h(X1, yi + 1), u), v);
+}
+function fbm(x, y, wrap, oct = 5) { let s = 0, a = 0.5, f = 1; for (let i = 0; i < oct; i++) { s += a * vnoise(x * f, y * f, wrap * f); a *= 0.5; f *= 2; } return s / 0.97; }
+const mix3 = (a, b, t) => [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)];
+function canvasTex(w, h, fn, alpha = false) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  const img = x.createImageData(w, h);
+  for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+    const r = fn(i / w, j / h); const k = (j * w + i) * 4;
+    img.data[k] = r[0]; img.data[k + 1] = r[1]; img.data[k + 2] = r[2]; img.data[k + 3] = alpha ? r[3] : 255;
+  }
+  x.putImageData(img, 0, 0);
+  const t = new THREE.CanvasTexture(c); t.wrapS = THREE.RepeatWrapping; t.anisotropy = 4; return t;
+}
+function glowTex(stops) {
+  const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d');
+  const g = x.createRadialGradient(128, 128, 0, 128, 128, 128); stops.forEach(([o, col]) => g.addColorStop(o, col));
+  x.fillStyle = g; x.fillRect(0, 0, 256, 256); return new THREE.CanvasTexture(c);
+}
+
+// ---------- renderer ----------
+const R = new THREE.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true, preserveDrawingBuffer: true });
+R.setPixelRatio(1); R.setSize(W, H, false);
+R.outputEncoding = THREE.sRGBEncoding; R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 0.95;
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(40, W / H, 0.05, 6000);
+
+// ---------- textures ----------
+const nebMap = canvasTex(1024, 512, (u, v) => {
+  const n = fbm(u * 4, v * 4, 4, 6), m = fbm(u * 3 + 5, v * 3 + 2, 3, 5);
+  let c = mix3([4, 7, 18], [10, 18, 38], clamp(n * 1.2));
+  c = mix3(c, [18, 60, 90], clamp((n - 0.58) * 2.2) * 0.45);
+  c = mix3(c, [60, 30, 80], clamp((m - 0.6) * 2.5) * 0.4);
+  return c;
+}); nebMap.encoding = THREE.sRGBEncoding;
+const glowWarm = glowTex([[0, 'rgba(255,250,235,1)'], [0.12, 'rgba(255,220,150,0.85)'], [0.35, 'rgba(245,166,35,0.28)'], [1, 'rgba(245,120,20,0)']]);
+const glowSoft = glowTex([[0, 'rgba(255,255,255,1)'], [0.4, 'rgba(255,255,255,0.25)'], [1, 'rgba(255,255,255,0)']]);
+// ---------- background ----------
+const neb = new THREE.Mesh(new THREE.SphereGeometry(3000, 48, 24), new THREE.MeshBasicMaterial({ map: nebMap, side: THREE.BackSide, toneMapped: false, depthWrite: false }));
+scene.add(neb);
+function makePoints(n, posFn, sizeFn, colFn, sizeAtt) {
+  const g = new THREE.BufferGeometry(), P = new Float32Array(n * 3), S = new Float32Array(n), Cc = new Float32Array(n * 3);
+  for (let i = 0; i < n; i++) { const p = posFn(i); P.set(p, i * 3); S[i] = sizeFn(i); Cc.set(colFn(i), i * 3); }
+  g.setAttribute('position', new THREE.BufferAttribute(P, 3)); g.setAttribute('size', new THREE.BufferAttribute(S, 1)); g.setAttribute('color', new THREE.BufferAttribute(Cc, 3));
+  const m = new THREE.ShaderMaterial({
+    uniforms: { uOp: { value: 1 }, uAtt: { value: sizeAtt ? 1 : 0 } }, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: `attribute float size; attribute vec3 color; varying vec3 vC; uniform float uAtt;
+      void main(){ vC=color; vec4 mv=modelViewMatrix*vec4(position,1.); gl_PointSize = uAtt>0.5 ? size*300./-mv.z : size; gl_Position=projectionMatrix*mv; }`,
+    fragmentShader: `varying vec3 vC; uniform float uOp; void main(){ float d=length(gl_PointCoord-.5)*2.; float a=smoothstep(1.,0.,d); a*=a; gl_FragColor=vec4(vC*a*uOp,1.); }`
+  });
+  return new THREE.Points(g, m);
+}
+const stars = makePoints(3500, () => { const u = rnd() * 2 - 1, th = rnd() * TAU, s = Math.sqrt(1 - u * u); return [s * Math.cos(th) * 2000, u * 2000, s * Math.sin(th) * 2000]; },
+  () => 1.5 + Math.pow(rnd(), 6) * 7, () => { const k = rnd(); const b = 0.4 + rnd() * 0.6; return k < 0.15 ? [0.6 * b, 0.9 * b, 1 * b] : k < 0.25 ? [1 * b, 0.8 * b, 0.55 * b] : [b, b, b * 0.95]; });
+scene.add(stars);
+
+
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+function look(c, p, tgt, fov = 40) { c.position.copy(p); c.fov = fov; c.updateProjectionMatrix(); c.lookAt(tgt); c.updateMatrixWorld(); }
+function proj(v, c = cam) { const p = v.clone().project(c); return { x: (p.x + 1) / 2 * W, y: (1 - p.y) / 2 * H, z: p.z }; }
+</script>
+<script src="overlay.js"></script>
+<script src="helpers.js"></script>
+<script src="brainbase.js"></script><script src="objects.js"></script>
+<script src="scenes.js"></script>
+</body></html>

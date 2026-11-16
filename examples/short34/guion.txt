@@ -1,0 +1,15 @@
+Durante casi noventa años creímos que los materiales magnéticos eran solo de dos tipos. Hay un tercero. Y llevaba décadas guardado en los cajones de los laboratorios.
+
+El primero lo conoces: el imán de la nevera. Por dentro, sus átomos son como brújulas diminutas que apuntan todas hacia el mismo lado. Se llama ferromagnetismo.
+
+El segundo se identificó en los años treinta. Aquí las brújulas se alternan: una hacia arriba, otra hacia abajo. Se anulan entre sí y, desde fuera, el material no parece magnético. Es el antiferromagnetismo.
+
+En dos mil veintidós, unos físicos teóricos propusieron un tercero: el altermagnetismo. Las brújulas también se anulan, pero los átomos que las rodean están girados unos respecto a otros. Por fuera no atrae nada. Por dentro, los electrones lo sienten como si fuera un imán.
+
+¿Y cómo se demuestra algo así? Con rayos equis que giran. Un equipo dirigido por el laboratorio SLAC, de Estados Unidos, fue al sincrotrón europeo de Grenoble y lanzó rayos equis que giran hacia la izquierda y hacia la derecha contra un cristal de telururo de manganeso. Un antiferromagneto normal respondería igual a los dos. Este no. Repitieron el experimento un año después y salió lo mismo. Lo acaban de publicar en la revista Science.
+
+Ya había indicios desde dos mil veinticuatro. Esta es una de las pruebas más directas hasta ahora.
+
+¿Para qué sirve? Para memorias más rápidas y que gasten menos energía, porque junta lo mejor de los otros dos. Pero ojo: todavía es ciencia de laboratorio. Ningún aparato lo usa.
+
+Y ahora te pregunto: si un tipo de magnetismo estuvo noventa años delante de nosotros, ¿qué más se nos está escapando?

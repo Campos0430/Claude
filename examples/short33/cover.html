@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:MontBlack;src:url('../../short/node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2')}
+html,body{margin:0;background:#000}canvas{display:block}</style></head><body><canvas id="c" width="1080" height="1920"></canvas><script>
+const W=1080,H=1920,c=document.getElementById('c'),x=c.getContext('2d');
+const L=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.src=s});
+(async()=>{const bg=await L('bg.png');await document.fonts.load('80px MontBlack');
+ x.filter='saturate(1.1) contrast(1.05)';x.drawImage(bg,0,0);x.filter='none';
+ let g=x.createLinearGradient(0,0,0,700);g.addColorStop(0,'rgba(5,9,22,.92)');g.addColorStop(1,'rgba(5,9,22,0)');x.fillStyle=g;x.fillRect(0,0,W,700);
+ g=x.createLinearGradient(0,1500,0,H);g.addColorStop(0,'rgba(5,9,22,0)');g.addColorStop(1,'rgba(5,9,22,.85)');x.fillStyle=g;x.fillRect(0,1500,W,420);
+ x.save();x.globalCompositeOperation='lighter';g=x.createRadialGradient(540,1000,80,540,1000,800);g.addColorStop(0,'rgba(245,166,35,0.22)');g.addColorStop(1,'rgba(245,166,35,0)');x.fillStyle=g;x.fillRect(0,0,W,H);x.restore();
+ // typed paper strip
+ x.save();x.translate(W/2,1690);x.rotate(-.025);x.shadowColor='rgba(0,0,0,.7)';x.shadowBlur=40;x.shadowOffsetY=14;x.fillStyle='#f2ecdc';x.beginPath();x.roundRect(-470,-80,940,160,14);x.fill();x.shadowColor='transparent';x.fillStyle='#1a2030';x.font='46px "Courier New",monospace';x.textAlign='center';x.textBaseline='middle';x.fillText('xkÑq;wz En un lugar de la M',0,-30);x.fillStyle='#8a8f9c';x.fillText('ssssjsss ssqss sssssss ssl',0,32);x.restore();
+ const sticker=(t,X,Y,rot,bg,fg,size)=>{x.save();x.translate(X,Y);x.rotate(rot);x.font=`${size}px MontBlack`;const w=x.measureText(t).width+76,h=size*1.24;x.shadowColor='rgba(0,0,0,.7)';x.shadowBlur=40;x.shadowOffsetY=16;x.fillStyle=bg;x.beginPath();x.roundRect(-w/2,-h/2,w,h,28);x.fill();x.shadowColor='transparent';x.fillStyle=fg;x.textAlign='center';x.textBaseline='middle';x.fillText(t,0,size*.05);x.restore();};
+ sticker('EL MONO',W/2-40,270,-.04,'#F4F1EA','#0B1426',178);
+ sticker('QUE ESCRIBE',W/2+10,480,.03,'#F5A623','#0B1426',128);
+ window.done=true;})();
+</script></body></html>
