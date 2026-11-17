@@ -49,9 +49,11 @@ Montaje final: concat de `parts/q_*.mp4` + mix.wav, `libx264 -crf 20 -preset ver
 
 1. Subir el MP4 a la rama `videos` de este repo y usar la URL raw pública:
    `https://raw.githubusercontent.com/Campos0430/claude/videos/<archivo>.mp4` → `vidiq_video_upload` (url) → uploadId.
-   La portada con `vidiq_upload_image` si hace falta (la miniatura personalizada solo funciona en canales verificados).
+   No hace falta subir la portada aquí: el `thumbnailImageId` del borrador NO se aplica (comprobado el 17-11-2026). La portada se pone en el paso 4.
 2. `vidiq_social_post_draft_create` con dos destinos: YOUTUBE (UCJtNzOk9QpT6nn2UV1Vgjgw, título elegido, descripción SEO como `text`, `privacyStatus: public`, `publishAt` a la hora acordada, categoría 27 Educación) e INSTAGRAM (29701781146124881, descripción de Instagram como `text`, mismo `publishAt`).
-3. Enseñar el borrador a Rubén si cambia algo; con su «ok», `vidiq_social_post_publish`. Después vaciar la rama `videos` (borrar la rama falla por el proxy): repo nuevo en /tmp con solo un README, `git checkout -b videos`, commit y `git push -f origin videos`.
+3. Enseñar el borrador a Rubén si cambia algo; con su «ok», `vidiq_social_post_publish`. Comprobar con `vidiq_social_post_status` hasta que el destino YOUTUBE esté `completed` y anotar el videoId de su `postUrl`.
+4. **Portada de YouTube (obligatorio):** convertir cada portada a JPG (`ffmpeg -i portada.png -q:v 2 pNN.jpg`, < 2 MB), subirla a la rama `videos` y llamar a `vidiq_update_video_thumbnail` (channelId UCJtNzOk9QpT6nn2UV1Vgjgw, videoId, `thumbnail` = URL raw del JPG; 5 créditos). Funciona aunque el vídeo esté programado y aún privado. En Instagram vidIQ no permite elegir la portada del Reel: avisar a Rubén de que la cambie desde la app si quiere.
+5. Después vaciar la rama `videos` (borrar la rama falla por el proxy): repo nuevo en /tmp con solo un README, `git checkout -b videos`, commit y `git push -f origin videos`.
 
 Subir el MP4: repo nuevo en /tmp, `git checkout -b videos`, copiar el MP4, commit y `git push -f origin videos` (probado el 16-11-2026: raw.githubusercontent.com lo sirve como application/octet-stream y vidiq_video_upload lo importa).
 
