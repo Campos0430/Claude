@@ -5,7 +5,7 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
 
 ## Flujo diario (dos Shorts al día, con aprobación)
 
-1. **08:00 — Guiones.** Elegir 2 temas nuevos y verificables (noticias científicas recientes de la última semana o curiosidades sólidas) que NO estén ya en el canal (consultar `vidiq_channel_videos` con el canal de arriba, formato short). Variar áreas (espacio, biología, historia/arqueología, física, psicología, tecnología). Evitar temas que YouTube/Instagram puedan restringir (drogas, violencia explícita, sexo, salud polémica) salvo que se traten con enfoque divulgativo y portada neutra.
+1. **08:00 — Guiones.** Elegir 2 temas nuevos y verificables (noticias científicas recientes de la última semana o curiosidades sólidas) que NO estén ya en el canal: revisar SIEMPRE la sección «Temas ya publicados» de este README y, si hay créditos, también `vidiq_channel_videos` (canal de arriba, formato short). No repetir nunca un tema (petición de Rubén, 21-11-2026). Variar áreas (espacio, biología, historia/arqueología, física, psicología, tecnología). Evitar temas que YouTube/Instagram puedan restringir (drogas, violencia explícita, sexo, salud polémica) salvo que se traten con enfoque divulgativo y portada neutra.
 2. Verificar cada dato con búsqueda web antes de escribir. Si el gancho propuesto es exagerado o falso, ajustarlo y decirlo. Nada engañoso.
 3. Entregar por cada tema (con `SendUserMessage`, son para leer):
    - **Guion para ElevenLabs**: 220–260 palabras (≈ 85–100 s), números escritos con letras, frases cortas, gancho fuerte en la primera frase, cierre con una pregunta al espectador.
@@ -14,6 +14,28 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
 5. Cuando Rubén responda «ok» (aprobación explícita), subir y programar (sección «Publicación»). Sin «ok», no publicar nunca.
 
 **Horas de publicación** (Europa/Madrid): entre semana **14:30** y **20:30**; sábados y domingos **11:00** y **19:00**. Si un día ya pasó la primera hora, usar la siguiente franja libre.
+
+## Temas ya publicados (no repetir)
+
+Actualizar esta lista cada vez que un Short se publique o programe (fecha · tema). Si vidIQ no tiene créditos, esta lista es la referencia. Es posible que falten Shorts antiguos: ante la duda, preguntar a Rubén antes de producir.
+
+- Caer en un agujero negro
+- Tardígrados
+- Un día en Venus
+- La medusa inmortal
+- Amnesia infantil
+- Krakatoa
+- Árboles vs. estrellas
+- El pulpo
+- La señal Wow!
+- El mito de las bacterias
+- Los experimentos de Libet
+- Teorema del mono infinito (short33)
+- Altermagnetismo, el tercer tipo de magnetismo (short34)
+- Cannabis en una tumba de Siberia, Tunnug 1 (short35)
+- Estrella muerta / enana blanca que «late» cada 8 minutos (GPM J0715−1141)
+- 21-11-2026 · El hombre de Rødhals, testigo de la llegada de la agricultura (short37)
+- 21-11-2026 · Scaphokogia huachafo, la ballena con la cara más torcida (short38)
 
 ## Montaje (≈ 50 min por Short en render)
 
