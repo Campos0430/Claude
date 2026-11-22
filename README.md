@@ -36,6 +36,8 @@ Actualizar esta lista cada vez que un Short se publique o programe (fecha · tem
 - Estrella muerta / enana blanca que «late» cada 8 minutos (GPM J0715−1141)
 - 21-11-2026 · El hombre de Rødhals, testigo de la llegada de la agricultura (short37)
 - 21-11-2026 · Scaphokogia huachafo, la ballena con la cara más torcida (short38)
+- 22-11-2026 · Supermontañas de Gondwana bajo la Antártida (short39)
+- 23-11-2026 · Águilas que cazan babuinos en Ennedi, Chad (short40)
 
 ## Montaje (≈ 50 min por Short en render)
 
