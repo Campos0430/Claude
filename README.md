@@ -38,6 +38,8 @@ Actualizar esta lista cada vez que un Short se publique o programe (fecha · tem
 - 21-11-2026 · Scaphokogia huachafo, la ballena con la cara más torcida (short38)
 - 22-11-2026 · Supermontañas de Gondwana bajo la Antártida (short39)
 - 23-11-2026 · Águilas que cazan babuinos en Ennedi, Chad (short40)
+- 23-11-2026 · Jonathan, la tortuga de 194 años: su ADN y epigenoma (short41)
+- 24-11-2026 · Supernovas fallidas: estrellas que mueren sin explotar, hueco de 12–16 masas solares (short42)
 
 ## Montaje (≈ 50 min por Short en render)
 
