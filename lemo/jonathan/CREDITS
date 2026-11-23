@@ -1,0 +1,12 @@
+Jonathan — Colored-Pencil Science Illustration (vertical Short, 90.8 s)
+
+Style: "Colored-Pencil Science Illustration" from Lemo-Opuscar (github.com/lemomo-ai/lemo-opuscar), MIT licence.
+Pencil engine (G-buffer shaders, pencil post pass, composite, overlay helpers) adapted from
+styles/colored-pencil/demo/main.js of that repository (MIT). World, story, shots and labels are original to this film.
+three.js r170 — MIT licence (threejs.org).
+Font: Klee One (Fontworks) — SIL Open Font License 1.1 (fonts.google.com/specimen/Klee+One).
+Audio: narration (ElevenLabs, Rubén's own cloned voice "Yo"), music and sound effects from the original
+"Lo que ignoramos" Short 41 mix, used unchanged. Sound effects from Remotion (@remotion/sfx).
+Map: coastlines drawn by hand from approximate coordinates (Africa, Madagascar, Arabian Peninsula); no borders.
+Facts: Vaisvil et al., "Epigenetic insights into extreme longevity in the world's oldest terrestrial animal, Jonathan",
+Science Advances 12 (41), 2026, doi:10.1126/sciadv.adw8887; Live Science (7 Oct 2026); Popular Science.

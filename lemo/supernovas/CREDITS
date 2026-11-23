@@ -1,0 +1,5 @@
+Estrellas que mueren sin explotar — Sci-fi Hologram HUD version
+Picture: code-drawn (Canvas 2D) using the wireframe/HUD engine from Lemo-Opuscar's hologram-hud demo (engine/holo.js, engine/hud.js), MIT licence, https://github.com/lemomo-ai/lemo-opuscar
+Audio: Rubén's narration (ElevenLabs cloned voice "Yo") + original procedural score and Remotion SFX from the original Short 42 mix — unchanged.
+Fonts: Rajdhani (Indian Type Foundry), OFL 1.1 — fonts/OFL-rajdhani.txt; Share Tech Mono (Carrois Apostrophe), OFL 1.1 — fonts/OFL-sharetechmono.txt. Source: github.com/google/fonts
+Facts: Legred, Golomb & Chatziioannou, Physical Review D 114 (10), 2026, doi:10.1103/mnzq-w1b5 (Caltech). The mass histogram is a schematic illustration, not the paper's binned data (labelled "ESQUEMA ILUSTRATIVO" on screen).

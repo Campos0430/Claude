@@ -1,0 +1,11 @@
+Jonathan, 194 años — Paper Pop-up Book version (1080x1920, 30 fps)
+
+Engine code: lemo-opuscar "Paper Pop-up Book" demo engine (book.js, paper.js, cutmesh.js, post.js, lib.js, art.js) by Lemomo — MIT License, https://github.com/lemomo-ai/lemo-opuscar. Copied into this project and adapted (cover text); film code (main.js, art2.js) written for this film.
+three.js r170 — MIT License, https://threejs.org
+Fonts: Fredoka (OFL 1.1), Lilita One (OFL 1.1) — Google Fonts, https://github.com/google/fonts
+HDRI: lythwood_lounge_2k — Poly Haven, CC0, https://polyhaven.com/a/lythwood_lounge
+Wood texture: american_walnut_veneer — Poly Haven, CC0
+Props: desk_lamp_arm_01, tea_set_01 — Poly Haven, CC0
+Map: coastlines hand-approximated (decorative, no borders), not survey data.
+Audio: original mix from the Short "Lo que ignoramos" (narration by Rubén, ElevenLabs voice clone; procedural score; Remotion SFX) — unchanged.
+Facts: Vaisvil et al., "Epigenetic insights into extreme longevity in the world's oldest terrestrial animal, Jonathan", Science Advances 12 (41), 2026, doi:10.1126/sciadv.adw8887.
