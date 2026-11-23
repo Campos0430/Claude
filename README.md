@@ -11,7 +11,7 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
    - **Guion para ElevenLabs**: 220–260 palabras (≈ 85–100 s), números escritos con letras, frases cortas, gancho fuerte en la primera frase, cierre con una pregunta al espectador.
    - Pregunta en pantalla · 3 títulos · texto de portada (máx. 4 palabras) · descripción SEO de YouTube con hashtags · **debajo** la descripción para Instagram · fuentes (enlaces).
 4. **Voz**: conector ElevenLabs → `creative_generate_speech` con `voice_id: alVwHikmUqVhndrBggwB` (voz clonada «Yo» de Rubén), `model_id: eleven_v4`, `generations_count: 1` (plan Creator, ~1 crédito por carácter; nunca repetir una generación para reintentar). Tras ~20 s, `creative_get_generations` da el `full_res_url`; descargarlo con curl. Si el dominio elevenlabsusercontent.com está bloqueado, pedir a Rubén que descargue el mp3 desde el flow y lo envíe. Montar cada Short (sección «Montaje») y enviar con `SendUserFile` el MP4 + la portada PNG, más la hora prevista de publicación.
-5. Cuando Rubén responda «ok» (aprobación explícita), subir y programar (sección «Publicación»). Sin «ok», no publicar nunca.
+5. Cuando Rubén responda «ok» (aprobación explícita), subir y programar (sección «Publicación»), sin vidIQ. Sin «ok», no publicar nunca.
 
 **Horas de publicación** (Europa/Madrid): entre semana **14:30** y **20:30**; sábados y domingos **11:00** y **19:00**. Si un día ya pasó la primera hora, usar la siguiente franja libre.
 
@@ -72,6 +72,8 @@ Montaje final: concat de `parts/q_*.mp4` + mix.wav, `libx264 -crf 20 -preset ver
 **Portada** (siempre, sin fallos visuales, con gancho): `cover/bg.js` renderiza un fondo 3D, `cover/cover.html` compone texto tipo pegatina (2 bloques, blanco y ámbar, MontBlack) + un elemento central llamativo; `node cover/shot.js` → PNG 1080×1920. Ver ejemplos.
 
 ## Publicación (solo tras el «ok» de Rubén)
+
+> **No usar vidIQ para programar ni subir vídeos** (petición de Rubén, 23-11-2026). vidIQ solo para consultar (p. ej. `vidiq_channel_videos`). Para publicar: un conector de programación que Rubén tenga conectado (p. ej. Metricool o Zapier); si no hay ninguno, entregarle MP4, portada, título, descripciones y hora para que lo suba él desde YouTube Studio e Instagram. Los pasos de abajo con vidIQ quedan solo como referencia histórica.
 
 1. Subir el MP4 a la rama `videos` de este repo y usar la URL raw pública:
    `https://raw.githubusercontent.com/Campos0430/claude/videos/<archivo>.mp4` → `vidiq_video_upload` (url) → uploadId.
