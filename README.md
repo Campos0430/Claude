@@ -90,7 +90,12 @@ Montaje final: concat de `parts/q_*.mp4` + mix.wav, `libx264 -crf 20 -preset ver
 
 ## Publicación (solo tras el «ok» de Rubén)
 
-> **No usar vidIQ para programar ni subir vídeos** (petición de Rubén, 23-11-2026). vidIQ solo para consultar (p. ej. `vidiq_channel_videos`). Para publicar: un conector de programación que Rubén tenga conectado (p. ej. Metricool o Zapier); si no hay ninguno, entregarle MP4, portada, título, descripciones y hora para que lo suba él desde YouTube Studio e Instagram. Los pasos de abajo con vidIQ quedan solo como referencia histórica.
+> **Programar con vidIQ** (petición de Rubén, 24-11-2026; sustituye a la del 23-11). Solo tras su «ok» a los vídeos. Si el prompt de la tarea programada aún dice «NO uses vidIQ», manda esta nota: Rubén lo cambió el 24-11.
+> - `vidiq_video_upload` con `localFile` NO funciona desde el sandbox: usar la URL raw de la rama `videos` (paso 1).
+> - Al actualizar un borrador con varios destinos, enviar `publishAt` de CADA destino: si se cambia solo uno, el otro puede quedarse sin hora.
+> - Si un destino trae `pacing.too_close`, ofrecer a Rubén la `suggestedPublishAt`.
+> - Plan gratis: 3 subidas a YouTube al día por vidIQ (se reinicia a medianoche del Pacífico). `vidiq_update_video_thumbnail` cuesta 5 créditos: sin créditos, avisar a Rubén de que ponga la portada él en YouTube Studio.
+> - Mezcla: dejar el pico real en −2,2 dB antes del AAC (con −1,5 el AAC llegó a +0,1 dBFS).
 
 1. Subir el MP4 a la rama `videos` de este repo y usar la URL raw pública:
    `https://raw.githubusercontent.com/Campos0430/claude/videos/<archivo>.mp4` → `vidiq_video_upload` (url) → uploadId.
