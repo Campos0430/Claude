@@ -53,6 +53,8 @@ Actualizar esta lista cada vez que un Short se publique o programe (fecha · tem
 - 23-11-2026 · Águilas que cazan babuinos en Ennedi, Chad (short40)
 - 23-11-2026 · Jonathan, la tortuga de 194 años: su ADN y epigenoma (short41)
 - 24-11-2026 · Supernovas fallidas: estrellas que mueren sin explotar, hueco de 12–16 masas solares (short42)
+- 24-11-2026 · Acantilados de hielo en cráteres de Marte, Alba Mons (short43)
+- 25-11-2026 · El contador del sueño: neuronas de presión de sueño en ratones (short44)
 
 ## Montaje (≈ 50 min por Short en render)
 
