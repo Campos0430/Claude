@@ -1,0 +1,4 @@
+# Un virus apagó un gen — Paper Pop-up Book (1080×1920, 30 fps, 55.8 s)
+Logline: a pop-up book where a paper virus comes down on a string and switches off the chimp's gene bulb, while the human's stays lit.
+Spreads: (0) jungle edge, chimp + human busts, gene bulbs on strings, virus descending (hook on frame 1) → (1) PTERV1 and a paper helix that takes purple virus rungs → (2) 150 hanging viruses over the chimp vs 0 → (3) the gene on the helix, bulb off when the copy lands, CRISPR scissors snip it out, bulb on → (4) pink organoids, neurons pop and connect, puzzle piece → (5) 8 % pie, then the opening tableau again (loop: the last frame matches frame 1).
+Accents: purple = virus, yellow = gene on. Subtitles bottom centre, Spanish. Foley: paper only (snaps, swishes, string tinks, light-switch clicks, scissor snips), music: ukulele + music box (score.py), no Remotion SFX.

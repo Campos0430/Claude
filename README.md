@@ -17,6 +17,9 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
 
 ## Montaje con Lemo-Opuscar (obligatorio desde el 23-11-2026)
 
+> **27-11-2026 (Rubén):** le gustó el **estilo 3D realista** del short48: render three.js propio con el motor y la postproducción de Lemo-Opuscar (bloom, ACES), estrellas con superficie procedural, gas con partículas y textos tipo documental. Código en `lemo/latido3d/` (render ~0,6 s/fotograma). No quiso `glass-product`; el `colored-pencil` y el `hologram-hud` para este tema le parecieron poco animados o poco realistas.
+> **Música:** cada vídeo lleva una banda nueva compuesta para él; no reutilizar la del ukelele + caja de música (`lemo/jonathan_popup/audio2/score.py`) ni repetir bandas de otros Shorts. Herramientas: `tools/subs.py` (subtítulos desde words.json), `tools/mix.sh` (mezcla −14 LUFS; `SG`/`FG` ajustan el latido/efectos y el foley), `tools/final.sh` (montaje + comprobaciones + hoja de 16 fotogramas).
+
 Petición de Rubén: **todos los vídeos se hacen con las plantillas de vídeo de Lemo-Opuscar**, en un **estilo 3D que encaje con el tema**, **ignorando el estilo del canal** (paleta noche/cian/ámbar, cerebro, logo final, plantilla de `template/`) y con la **música de fondo que mejor le convenga** (compuesta según la paleta sonora del estilo). La sección «Montaje» de más abajo queda solo como referencia técnica (alineado de palabras, render por trozos, mezcla).
 
 1. Clonar la biblioteca: `git clone --depth 1 https://github.com/lemomo-ai/lemo-opuscar /home/claude/ext/lemo-opuscar` (MIT). Leer `AGENTS.md`, `DIRECTOR.md`, `TECHNIQUE.md` y el `styles/<slug>/STYLE.md` elegido. El catálogo está en `styles/README.md`.
@@ -57,6 +60,9 @@ Actualizar esta lista cada vez que un Short se publique o programe (fecha · tem
 - 25-11-2026 · El contador del sueño: neuronas de presión de sueño en ratones (short44)
 - 25-11-2026 · Yakamys, el roedor de 30 kg de Tailandia conocido por dos dientes (short45, brick-toy)
 - 25-11-2026 · 21 idiomas, un mismo significado en el cerebro, MIT (short46, memphis-diorama)
+- 26-11-2026 · La Voyager 1 a un día luz de la Tierra
+- 27-11-2026 · Un virus antiguo (PTERV1) apagó un gen del cerebro del chimpancé, Lund (short47, paper-popup) · programado 14:30
+- 27-11-2026 · El último latido de una estrella moribunda, IRAS 06530-0213, ALMA (short48, 3D realista) · programado 20:30
 
 ## Montaje (≈ 50 min por Short en render)
 
