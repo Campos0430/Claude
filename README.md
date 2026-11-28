@@ -63,6 +63,8 @@ Actualizar esta lista cada vez que un Short se publique o programe (fecha · tem
 - 26-11-2026 · La Voyager 1 a un día luz de la Tierra
 - 27-11-2026 · Un virus antiguo (PTERV1) apagó un gen del cerebro del chimpancé, Lund (short47, paper-popup) · programado 14:30
 - 27-11-2026 · El último latido de una estrella moribunda, IRAS 06530-0213, ALMA (short48, 3D realista) · programado 20:30
+- 28-11-2026 · Cerdo de mar: bacteria Abyssoplasma bajo su piel, Universidad de Tokio (short49, 3D realista abisal) · programado 11:00
+- 28-11-2026 · Agujero negro primordial del tamaño de un átomo que destruye una estrella, MIT (short50, 3D realista) · programado 19:00
 
 ## Montaje (≈ 50 min por Short en render)
 
