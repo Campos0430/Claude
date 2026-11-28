@@ -32,6 +32,7 @@ Objetivo: que el espectador se intrigue en los 3 primeros segundos y se quede ha
 
 **Montaje: los 3 primeros segundos**
 - Fotograma 1 = la imagen más espectacular del vídeo (el clímax, la explosión, el detalle imposible), no el plano de presentación. Si hace falta, empezar con un «flash-forward» de 1,5–2,5 s del clímax y volver al principio con un corte fuerte.
+- Criterio para el flash-forward (decidido 28-11-2026, Rubén lo deja a nuestro juicio): usarlo cuando el vídeo tenga un clímax visual claro que llegue tarde (explosión, revelación, transformación), y no en todos los vídeos para que no se vuelva predecible; como guía, en uno de cada dos o tres. El clímax se enseña sin explicarlo (que quede la pregunta «¿qué es esto?»), y se vuelve al inicio con un rebobinado o corte seco y una frase tipo «Para entenderlo, hay que empezar aquí». Si el dato fuerte ya se ve en el primer plano, ir en orden.
 - Movimiento rápido desde el fotograma 1 (empuje o giro de cámara visible en el primer medio segundo) y un corte o cambio visual antes de los 2 s.
 - Texto del gancho enorme y corto: 2–5 palabras, centrado, ≥ 120 px, legible en el móvil sin sonido. Nada de titulares de dos líneas con antetítulo al principio.
 - Sonido: impacto o golpe en el fotograma 0 (sin fundidos de entrada) y la voz arrancando en el primer medio segundo.
