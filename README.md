@@ -15,6 +15,28 @@ Este repo contiene todo lo necesario para que una sesión nueva produzca Shorts 
 
 **Horas de publicación** (Europa/Madrid): entre semana **14:30** y **20:30**; sábados y domingos **11:00** y **19:00**. Si un día ya pasó la primera hora, usar la siguiente franja libre.
 
+## Inicios más impactantes (petición de Rubén, 28-11-2026: obligatorio)
+
+Objetivo: que el espectador se intrigue en los 3 primeros segundos y se quede hasta el final. Revisar estas reglas antes de escribir el guion y antes de montar.
+
+**Guion: la primera frase**
+- Máximo 10–12 palabras, que se digan en menos de 3 s. Nada de contexto, nombres de universidades ni «Un estudio dice…» al principio.
+- Abre una pregunta en la cabeza del espectador y no la cierres hasta el final (bucle abierto). Fórmulas que funcionan, siempre con datos reales:
+  - Contradicción: «Este animal no debería poder vivir así… y vive.»
+  - Amenaza o consecuencia: «Algo más pequeño que un átomo puede reventar una estrella.»
+  - Misterio sin resolver: «Dentro de este animal hay algo que nadie había visto nunca.»
+  - Dato imposible con un número: «Siete veces más pequeño que lo mínimo que creíamos posible.»
+  - Tú: «Tu cerebro hace esto cada noche y no te enteras.»
+- La segunda frase sube la apuesta o promete el pago: «Y lo que hace ahí dentro aún no lo entiende nadie.» Prohibido prometer algo que el vídeo no cumple.
+- Cada 10–15 s, un nuevo gancho («Pero lo raro viene ahora», un giro, un número sorprendente) para que no caiga la retención.
+
+**Montaje: los 3 primeros segundos**
+- Fotograma 1 = la imagen más espectacular del vídeo (el clímax, la explosión, el detalle imposible), no el plano de presentación. Si hace falta, empezar con un «flash-forward» de 1,5–2,5 s del clímax y volver al principio con un corte fuerte.
+- Movimiento rápido desde el fotograma 1 (empuje o giro de cámara visible en el primer medio segundo) y un corte o cambio visual antes de los 2 s.
+- Texto del gancho enorme y corto: 2–5 palabras, centrado, ≥ 120 px, legible en el móvil sin sonido. Nada de titulares de dos líneas con antetítulo al principio.
+- Sonido: impacto o golpe en el fotograma 0 (sin fundidos de entrada) y la voz arrancando en el primer medio segundo.
+- Comprobar: el primer fotograma tiene que funcionar por sí solo como miniatura y entenderse sin audio. Revisar los fotogramas 0, 0,5, 1, 2 y 3 s en una hoja aparte antes de renderizar.
+
 ## Montaje con Lemo-Opuscar (obligatorio desde el 23-11-2026)
 
 > **27-11-2026 (Rubén):** le gustó el **estilo 3D realista** del short48: render three.js propio con el motor y la postproducción de Lemo-Opuscar (bloom, ACES), estrellas con superficie procedural, gas con partículas y textos tipo documental. Código en `lemo/latido3d/` (render ~0,6 s/fotograma). No quiso `glass-product`; el `colored-pencil` y el `hologram-hud` para este tema le parecieron poco animados o poco realistas.
@@ -116,3 +138,5 @@ Montaje final: concat de `parts/q_*.mp4` + mix.wav, `libx264 -crf 20 -preset ver
 Subir el MP4: repo nuevo en /tmp, `git checkout -b videos`, copiar el MP4, commit y `git push -f origin videos` (probado el 16-11-2026: raw.githubusercontent.com lo sirve como application/octet-stream y vidiq_video_upload lo importa).
 
 Si GitHub rechaza el push, pedir a Rubén que suba el MP4 con `vidiq_file_upload` (selector de archivos) y seguir igual.
+
+> **28-11-2026:** el `git push -f` a la rama `videos` lo bloquea el sistema de seguridad. Alternativa probada: subir los MP4 y las portadas JPG a una rama nueva sin forzar (`videos-AAAA-MM-DD`, p. ej. `videos-2026-11-28`) y usar `https://raw.githubusercontent.com/Campos0430/claude/videos-AAAA-MM-DD/<archivo>`. No se puede vaciar ni borrar después; avisar a Rubén para que borre esas ramas cuando quiera.
