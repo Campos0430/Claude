@@ -37,6 +37,15 @@ Objetivo: que el espectador se intrigue en los 3 primeros segundos y se quede ha
 - Sonido: impacto o golpe en el fotograma 0 (sin fundidos de entrada) y la voz arrancando en el primer medio segundo.
 - Comprobar: el primer fotograma tiene que funcionar por sí solo como miniatura y entenderse sin audio. Revisar los fotogramas 0, 0,5, 1, 2 y 3 s en una hoja aparte antes de renderizar.
 
+## Fotos reales (permitido de vez en cuando, petición de Rubén, 28-11-2026)
+
+Cuando ayude a que el espectador vea «el de verdad» (el animal, el fósil, la imagen del telescopio, la micrografía del estudio, la sonda…), se puede enseñar una foto real dentro del vídeo 3D. No en todos los vídeos: solo cuando lo real impresione más que la recreación o la confirme.
+- **Licencia:** solo dominio público, CC0 o CC BY (con su crédito). Fuentes buenas: NASA/JPL/Hubble/Webb (dominio público o con crédito de NASA), ESA (CC BY-SA 3.0 IGO, con crédito), NOAA, USGS, NIH/CDC PHIL, Wikimedia Commons filtrando por licencia, y las figuras de artículos con licencia CC BY (comprobar la licencia del artículo). Nada NC, nada con «todos los derechos reservados», nada de stock ni de notas de prensa sin licencia clara. Ante la duda, no se usa.
+- **Honestidad:** solo una foto del elemento real del que se habla (si es otra especie u otro objeto parecido, no). Rótulo pequeño en pantalla «Foto real · <fuente>» o «Imagen real del telescopio · <fuente>», y el crédito completo también en la descripción de YouTube y de Instagram. Si la imagen es una ilustración de artista, se dice «Ilustración».
+- **Personas:** nunca fotos de personas reales reconocibles.
+- **Cómo integrarla:** dentro del estilo (p. ej. una ficha o pantalla en el mundo 3D, un corte que pasa de la recreación a la foto con el mismo encuadre, o la foto apareciendo con un movimiento lento de cámara), 1,5–4 s, con un efecto de sonido propio (obturador, diapositiva, pitido de instrumento…). Funciona muy bien como revelación («Y este es el de verdad») o como cierre del gancho.
+- Descargar la imagen con curl/WebFetch desde la fuente oficial, guardar la URL y la licencia en `FACTS.md`/`CREDITS` del proyecto y decirlo en el adelanto a Rubén (qué foto, de dónde y con qué licencia).
+
 ## Montaje con Lemo-Opuscar (obligatorio desde el 23-11-2026)
 
 > **27-11-2026 (Rubén):** le gustó el **estilo 3D realista** del short48: render three.js propio con el motor y la postproducción de Lemo-Opuscar (bloom, ACES), estrellas con superficie procedural, gas con partículas y textos tipo documental. Código en `lemo/latido3d/` (render ~0,6 s/fotograma). No quiso `glass-product`; el `colored-pencil` y el `hologram-hud` para este tema le parecieron poco animados o poco realistas.
@@ -104,7 +113,7 @@ Después escribir `web/objects.js` y `web/scenes.js` siguiendo los ejemplos de `
 - `SC` = lista de escenas `{a, b, f(t)}` sincronizadas con `words.json`; `CUTS` = tiempos de corte. Helpers: `pop`, `chip`, `stamp`, `kicker`, `panel`, `text`, `ctaPill`, `orbitCam`, `look`, `proj`, `prog`, `eIO`, `eOut`, `back`, `C.{cyan,amber,white,night}`.
 - Zonas: texto superior y ≈ 250–480; subtítulos en y ≈ 1410 (no tapar); texto inferior y ≈ 1150–1320. Última escena: pregunta + logo «LO QUE / IGNORAMOS».
 - `web/overlay.js`: cambiar la regex `HOT` (palabras resaltadas) y los dos tiempos del final (fin de subtítulos = fin del habla, logo ≈ +0.15 s).
-- Paleta: noche #0B1426, cian #3FD0E8, ámbar #F5A623, blanco #F4F1EA. Estilo 3D estilizado + motion graphics, nada de imágenes reales de personas.
+- Paleta: noche #0B1426, cian #3FD0E8, ámbar #F5A623, blanco #F4F1EA. Estilo 3D estilizado + motion graphics, nada de imágenes reales de personas (las fotos reales de otros elementos se permiten: ver «Fotos reales»).
 
 Revisión obligatoria antes de renderizar: `node render3d.js stills t1 t2 …` y `./sheet.sh chk/a.jpg t1 t2 …` (4 por fila); mirar las hojas con Read y corregir solapes, objetos fuera de cuadro, textos ilegibles. Render: `./queue.sh` en segundo plano (timeout 7200000).
 
